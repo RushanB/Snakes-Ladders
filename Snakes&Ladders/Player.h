@@ -14,6 +14,11 @@
 @property (nonatomic, strong) NSDictionary *gameLogic;
 @property (nonatomic) BOOL gameOver;
 
+@property (nonatomic) NSString *name; //multiplayer support
+-(instancetype)initWithName:(NSString *)name;
+
+-(NSString *)score;
+
 -(void)roll;
 
 @end

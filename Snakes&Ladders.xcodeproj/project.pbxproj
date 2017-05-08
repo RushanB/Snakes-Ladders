@@ -10,6 +10,7 @@
 		3111C4A81EBE723A00D41300 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3111C4A71EBE723A00D41300 /* main.m */; };
 		3111C4B01EBE79DA00D41300 /* InputManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3111C4AF1EBE79DA00D41300 /* InputManager.m */; };
 		3111C4B31EBE7B2000D41300 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 3111C4B21EBE7B2000D41300 /* Player.m */; };
+		313968931EBFCA47009D032B /* PlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 313968921EBFCA47009D032B /* PlayerManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		3111C4AF1EBE79DA00D41300 /* InputManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputManager.m; sourceTree = "<group>"; };
 		3111C4B11EBE7B2000D41300 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		3111C4B21EBE7B2000D41300 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		313968911EBFCA47009D032B /* PlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerManager.h; sourceTree = "<group>"; };
+		313968921EBFCA47009D032B /* PlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,8 @@
 			children = (
 				3111C4AE1EBE79DA00D41300 /* InputManager.h */,
 				3111C4AF1EBE79DA00D41300 /* InputManager.m */,
+				313968911EBFCA47009D032B /* PlayerManager.h */,
+				313968921EBFCA47009D032B /* PlayerManager.m */,
 				3111C4B11EBE7B2000D41300 /* Player.h */,
 				3111C4B21EBE7B2000D41300 /* Player.m */,
 				3111C4A71EBE723A00D41300 /* main.m */,
@@ -131,6 +136,7 @@
 			files = (
 				3111C4B01EBE79DA00D41300 /* InputManager.m in Sources */,
 				3111C4B31EBE7B2000D41300 /* Player.m in Sources */,
+				313968931EBFCA47009D032B /* PlayerManager.m in Sources */,
 				3111C4A81EBE723A00D41300 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +266,7 @@
 				3111C4AD1EBE723A00D41300 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

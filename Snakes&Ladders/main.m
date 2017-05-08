@@ -8,18 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import "InputManager.h"
-#import "Player.h"
+#import "PlayerManager.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        BOOL choice = YES;
+        BOOL gameOn = YES;
         InputManager *newInput = [[InputManager alloc] init];
-        Player *newPlayer = [[Player alloc] init];
+        PlayerManager *newPlayer = [[Player alloc] init];
         
         NSLog(@"Welcome to Snakes & Ladders!\nPlease type 'roll' or 'r'");
         
-        while(choice){
+        while(gameOn){
+            [newPlayer.players removeAllObjects];
+            //PlayerManager.gameOver = NO;
             NSString *playerOption = [newInput getInput];
             
             if([playerOption isEqualToString:@"roll"] || [playerOption isEqualToString:@"r"]){
@@ -29,7 +31,7 @@ int main(int argc, const char * argv[]) {
                     break;
                 }
             }else if([playerOption isEqualToString:@"quit"]){
-                choice = NO;
+                gameOn = NO;
                 break;
             }
             
