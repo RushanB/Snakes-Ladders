@@ -12,6 +12,7 @@
 
 @interface PlayerManager : NSObject
 
+@property (nonatomic) BOOL gameOver;
 @property (nonatomic) NSMutableArray *players;
 @property (nonatomic) NSInteger currentIndex;
 
@@ -19,7 +20,9 @@
 
 -(Player *)currentPlayer;
 
+-(NSString *)score;
 
+-(void)roll;
 
 //modulus operator, the currentIndex and the count of the players array.
 

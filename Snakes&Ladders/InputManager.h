@@ -10,6 +10,6 @@
 
 @interface InputManager : NSObject
 
--(NSString *) getInput;
++(NSString *) getInput;
 
 @end

@@ -27,7 +27,7 @@
 
 -(void)createPlayers:(int) playerCount{
     NSArray *num = @[@"1", @"2", @"3",@"4"];
-    NSString *player = @"Player";
+    NSString *player = @"Player ";
     
     for(int i=1 ; i < playerCount+1 ; i++){
         NSString *playerName = [player stringByAppendingString:num[i-1]];

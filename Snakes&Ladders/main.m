@@ -14,27 +14,49 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         BOOL gameOn = YES;
-        InputManager *newInput = [[InputManager alloc] init];
-        PlayerManager *newPlayer = [[Player alloc] init];
-        
-        NSLog(@"Welcome to Snakes & Ladders!\nPlease type 'roll' or 'r'");
+        PlayerManager *newPlayer = [[PlayerManager alloc] init];
         
         while(gameOn){
             [newPlayer.players removeAllObjects];
-            //PlayerManager.gameOver = NO;
-            NSString *playerOption = [newInput getInput];
-            
-            if([playerOption isEqualToString:@"roll"] || [playerOption isEqualToString:@"r"]){
-                [newPlayer roll];
-                if(newPlayer.gameOver == YES){
-                    NSLog(@"You Win!");
+            newPlayer.gameOver = NO;
+            NSLog(@"Welcome to Snakes & Ladders! Press 'quit' to exit anytime.\nHow many Player(s) are playing:");
+            while(!newPlayer.gameOver){
+                
+                BOOL exit = NO;
+                while([newPlayer.players count] == 0){
+                    
+                    NSString *newInput = [InputManager getInput];
+                    
+                    if(([newInput intValue] > 0) && ([newInput intValue] < 5)){
+                        [newPlayer createPlayers:[newInput intValue]];
+                        NSLog(@"%li players are playing\n", (long)[newPlayer.players count]);
+                    }else if([newInput isEqualToString:@"quit"]){
+                        exit = YES;
+                        break;
+                    }else{
+                        NSLog(@"Please enter a number between 1 and 4 to continue.");
+                    }
+                }
+                if(exit){
+                    gameOn = NO;
                     break;
                 }
-            }else if([playerOption isEqualToString:@"quit"]){
-                gameOn = NO;
-                break;
+                
+                NSLog(@"It is %@'s turn. Please type 'roll' or 'r' to roll the dice.", [newPlayer currentPlayer].name);
+                NSString *newInput = [InputManager getInput];
+                
+                if([newInput isEqualToString:@"roll"] || [newInput isEqualToString:@"r"]){
+                    [newPlayer roll];
+                    NSLog(@"%@",[newPlayer score]);
+                    if(newPlayer.gameOver == YES){
+                        NSLog(@"You Win!");
+                        break;
+                    }
+                }else if([newInput isEqualToString:@"quit"]){
+                    gameOn = NO;
+                    break;
+                }
             }
-            
             
         }
         
